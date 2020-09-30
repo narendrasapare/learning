@@ -18,7 +18,7 @@ const reducer = (
   switch (action.type) {
     case actionTypes.ADD_ARTICLE:
       const newArticle: IArticle = {
-        id: Math.random(), // not really unique
+        id: Math.random(),
         title: action.article.title,
         body: action.article.body,
       };

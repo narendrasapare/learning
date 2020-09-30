@@ -7,7 +7,7 @@ export function addArticle(article: IArticle) {
     article,
   };
 
-  return simulateHttpRequest(action);
+  return (dispatch: DispatchType) => dispatch(action);
 }
 
 export function removeArticle(article: IArticle) {
@@ -15,13 +15,5 @@ export function removeArticle(article: IArticle) {
     type: actionTypes.REMOVE_ARTICLE,
     article,
   };
-  return simulateHttpRequest(action);
-}
-
-export function simulateHttpRequest(action: ArticleAction) {
-  return (dispatch: DispatchType) => {
-    setTimeout(() => {
-      dispatch(action);
-    }, 500);
-  };
+  return (dispatch: DispatchType) => dispatch(action);
 }
